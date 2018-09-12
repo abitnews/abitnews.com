@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "strict": 0
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}

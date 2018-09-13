@@ -4,6 +4,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
@@ -16,9 +17,29 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `news`,
+        path: `${__dirname}/src/news/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: './static/abitnews.png',
+
+        // appName: null, // Inferred with your package.json
+        // appDescription: null,
+        // developerName: null,
+        // developerURL: null,
+        // dir: 'auto',
+        // lang: 'en-US',
+        // background: '#fff',
+        // theme_color: '#fff',
+        // display: 'standalone',
+        // orientation: 'any',
+        // start_url: '/?homescreen=1',
+        // version: '1.0',
 
         icons: {
           android: true,
@@ -27,24 +48,24 @@ module.exports = {
           coast: false,
           favicons: true,
           firefox: true,
-          opengraph: false,
-          twitter: false,
+          opengraph: true,
+          twitter: true,
           yandex: false,
           windows: false,
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#05c3b6',
-        theme_color: '#05c3b6',
-        display: 'minimal-ui',
-        icon: './static/abitnews.png', // This path is relative to the root of the site.
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: {
+    //     name: 'abitnews',
+    //     short_name: 'abitnews',
+    //     start_url: '/',
+    //     background_color: '#05c3b6',
+    //     theme_color: '#05c3b6',
+    //     display: 'minimal-ui',
+    //     icon: './static/abitnews.png', // This path is relative to the root of the site.
+    //   },
+    // },
   ],
 };

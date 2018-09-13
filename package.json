@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "abitnews",
+  "description": "Technology newsletter",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "@forgiangi (gianlucachiap@gmail.com)",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -12,22 +12,24 @@
   },
   "dependencies": {
     "gatsby": "next",
-    "gatsby-plugin-favicon": "^3.1.4",
+    "gatsby-plugin-favicon": "3.1.2",
     "gatsby-plugin-manifest": "next",
     "gatsby-plugin-react-helmet": "next",
-    "gatsby-plugin-styled-components": "^2.0.11",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-helmet": "^5.2.0",
-    "styled-components": "^3.4.6"
+    "gatsby-plugin-styled-components": "3.0.0-rc.5",
+    "gatsby-source-filesystem": "^1.5.39",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-helmet": "5.2.0",
+    "styled-components": "3.4.6"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "gatsby-plugin-eslint": "^2.0.1",
-    "prettier": "^1.14.2"
+    "babel-eslint": "9.0.0",
+    "babel-plugin-styled-components": "1.7.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.11.1",
+    "gatsby-plugin-eslint": "2.0.1",
+    "prettier": "1.14.2"
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default class SubscriptionForm extends React.PureComponent {
-  state = { email: '' };
+  state = { email: '', emailBot: '' };
 
   handleEmailChange = event => {
     this.setState({
@@ -11,25 +11,51 @@ export default class SubscriptionForm extends React.PureComponent {
   };
   render() {
     return (
-      <Form
-        onSubmit={event => {
-          event.preventDefault();
-          this.props.handleSubscription(this.state.email);
-        }}
-      >
-        <EmailInput
-          type="email"
-          id="email"
-          placeholder="Email"
-          onChange={event =>
-            this.setState({
-              email: event.target.value,
-            })
-          }
-          text={this.state.email}
-        />
-        <SubscribeButton type="submit">Subscribe</SubscribeButton>
-      </Form>
+      <div id="mc_embed_signup">
+        <Form
+          action="https://abitcompany.us17.list-manage.com/subscribe/post?u=0fefed5f87ff20de347b84135&amp;id=f437b31b87"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          target="_blank"
+        >
+          <label htmlFor="mce-EMAIL" style={{ display: 'none' }}>
+            Email Address
+          </label>
+          <EmailInput
+            type="email"
+            value={this.state.value}
+            onChange={event => this.setState({ email: event.target.value })}
+            name="EMAIL"
+            placeholder="Email"
+            id="mce-EMAIL"
+          />
+          <div id="mce-responses">
+            <div id="mce-error-response" style={{ display: 'none' }} />
+            <div id="mce-success-response" style={{ display: 'none' }} />
+          </div>
+          <div
+            style={{ position: 'absolute', left: '-5000px' }}
+            aria-hidden="true"
+          >
+            <input
+              type="text"
+              name="b_0fefed5f87ff20de347b84135_f437b31b87"
+              tabIndex="-1"
+              value={this.state.emailBot}
+              onChange={event =>
+                this.setState({ email: event.target.emailBot })
+              }
+            />
+          </div>
+          <SubscribeButton
+            type="submit"
+            value="Subscribe"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+          />
+        </Form>
+      </div>
     );
   }
 }
@@ -55,7 +81,7 @@ const EmailInput = styled.input`
   letter-spacing: 2px;
   min-width: 300px;
 `;
-const SubscribeButton = styled.button`
+const SubscribeButton = styled.input`
   background-color: ${props => props.theme.mainColor};
   box-shadow: none;
   border: none;

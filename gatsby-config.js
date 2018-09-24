@@ -1,6 +1,20 @@
+let activeEnv = process.env.ACTIVE_ENV;
+
+if (!activeEnv) {
+  activeEnv = 'development';
+}
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'abitnews',
+  },
+  proxy: {
+    prefix: '/api',
+    url: process.env.URL_API,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -17,55 +31,29 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        name: `news`,
-        path: `${__dirname}/src/news/`,
+        trackingId: process.env.GATSBY_GA_TRACKING_ID,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Enables Google Optimize using your container Id
       },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        logo: './static/abitnews.png',
-
-        // appName: null, // Inferred with your package.json
-        // appDescription: null,
-        // developerName: null,
-        // developerURL: null,
-        // dir: 'auto',
-        // lang: 'en-US',
-        // background: '#fff',
-        // theme_color: '#fff',
-        // display: 'standalone',
-        // orientation: 'any',
-        // start_url: '/?homescreen=1',
-        // version: '1.0',
-
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          opengraph: true,
-          twitter: true,
-          yandex: false,
-          windows: false,
-        },
+        name: 'abitnews',
+        short_name: 'abitnews',
+        start_url: '/',
+        background_color: '#05c3b6',
+        theme_color: '#05c3b6',
+        display: 'minimal-ui',
+        icon: './static/abitnews.png', // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'abitnews',
-    //     short_name: 'abitnews',
-    //     start_url: '/',
-    //     background_color: '#05c3b6',
-    //     theme_color: '#05c3b6',
-    //     display: 'minimal-ui',
-    //     icon: './static/abitnews.png', // This path is relative to the root of the site.
-    //   },
-    // },
   ],
 };

@@ -34,7 +34,7 @@ const HomePage = () => (
           >
             @abitnewsbot
           </Link>
-          , our bots fill find it 🤖
+          , our bot will find it 🤖
         </HashTag>
       </Content>
     </HomePageWrapper>

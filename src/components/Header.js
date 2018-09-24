@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import Link from './Link';
 
 const Header = () => (
   <HeaderContainer>
     <Navbar>
       <Left>
-        <HomeLink to="/">~/</HomeLink>
+        <HomeLink
+          to="/"
+          activeStyle={{
+            display: 'none',
+          }}
+        >
+          ~/
+        </HomeLink>
       </Left>
-      <Right>
-        <NavLink to="/news">news</NavLink>
-      </Right>
+      <Right>{/* <NavLink to="/news">Last issue</NavLink> */}</Right>
     </Navbar>
   </HeaderContainer>
 );
@@ -18,7 +23,6 @@ const Header = () => (
 const Left = styled.div`
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
   justify-content: flex-start;
   width: 100%;
 `;
@@ -32,10 +36,9 @@ const Right = styled.div`
 const NavLink = styled(Link)`
   text-decoration: none;
   color: ${props => props.theme.baseTextColor};
-  display: flex;
-  align-items: center;
   padding: 0 10px;
   transition: 0.2s;
+  white-space: nowrap;
   &:hover {
     transition: 0.2s;
     color: ${props => props.theme.mainColor};

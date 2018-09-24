@@ -99,8 +99,10 @@ const SubscribeButton = styled.input`
   color: #fff;
   border-radius: 2px;
   border: 1px solid transparent;
+  letter-spacing: 2px;
   &:hover {
     transition: 0.3s;
+    letter-spacing: 3px;
     cursor: pointer;
     background-color: #fff;
     color: ${props => props.theme.mainColor};

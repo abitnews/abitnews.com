@@ -8,7 +8,7 @@ const Head = () => (
     <title>abitnews</title>
     <meta
       name="description"
-      content="Tech newsletter, programming, artificial intelligente, blockchain"
+      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, libraries"
     />
     <meta
       name="keywords"
@@ -19,7 +19,7 @@ const Head = () => (
     <meta property="og:title" content="abitnews" />
     <meta
       property="og:description"
-      content="Tech newsletter, programming, artificial intelligente, blockchain"
+      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, libraries"
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://abitnews.com/abitnews.png" />

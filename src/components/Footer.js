@@ -12,7 +12,7 @@ const Footer = () => (
       />
     </SocialContainer>
     <EmailLink target="_blank" href="mailto:hello@abitnews.com">
-      info@abit.company
+      hello@abitnews.com
     </EmailLink>
   </FooterContainer>
 );

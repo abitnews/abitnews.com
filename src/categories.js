@@ -15,8 +15,8 @@ const categories = [
 const categoriesDescription = [
   {
     key: 'techSeeker',
-    hashUrl: 'the-tech-seeker',
-    title: 'The Tech Seeker',
+    hashUrl: 'tech-seeker',
+    title: 'Tech Seeker',
     description: `The latest tech news, nothing too specific or complex,
      everything you need to look like a tech guru in a discussion`,
   },
@@ -29,15 +29,15 @@ const categoriesDescription = [
   },
   {
     key: 'frontend',
-    hashUrl: 'frontend-only',
-    title: 'Frontend Only',
+    hashUrl: 'frontend-wizard',
+    title: 'Frontend wizard',
     description: `"I don't care, Just give me the API".
      The passwords are saved in plaintext but the UX is beautiful`,
   },
   {
     key: 'crypto',
-    hashUrl: 'the-crypto-enthusiast',
-    title: 'The Crypto Enthusiast',
+    hashUrl: 'crypto-prophet',
+    title: 'Crypto prophet',
     description: `Everything you need to know about blockchain-related stuff.
      If you want to understand Smart contracts, how Bitcoin works
      or simply learn how to become rich investing in Dogecoin`,

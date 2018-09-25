@@ -85,6 +85,13 @@ const Word = styled.b`
   margin: 0 auto;
   animation: ${blinkCaret} 1s step-end infinite;
   color: ${props => props.theme.mainColor};
+  /* background: linear-gradient(-45deg, #80deea 0%, #05c3b6 100%); */
+  /* background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
+  /* background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); */
+  /* background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
+  /* background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   ${props =>
     props.isDelete &&
     css`

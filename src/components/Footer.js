@@ -25,6 +25,9 @@ const EmailLink = styled.a`
   font-weight: 700;
   font-size: 20px;
   padding: 20px 0;
+  @media screen and (max-width: 475px) {
+    font-size: 1rem;
+  }
 `;
 const SocialContainer = styled.div`
   display: flex;

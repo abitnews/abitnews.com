@@ -83,6 +83,7 @@ const EmailInput = styled.input`
 `;
 const SubscribeButton = styled.input`
   background-color: ${props => props.theme.mainColor};
+  /* background: linear-gradient(45deg, #80deea 0%, #05c3b6 100%); */
   box-shadow: none;
   border: none;
   display: inline-block;
@@ -95,7 +96,7 @@ const SubscribeButton = styled.input`
   text-transform: uppercase;
   vertical-align: middle;
   letter-spacing: 1px;
-  transition: 0.3s;
+  /* transition: 0.3s; */
   color: #fff;
   border-radius: 2px;
   border: 1px solid transparent;
@@ -105,6 +106,7 @@ const SubscribeButton = styled.input`
     letter-spacing: 3px;
     cursor: pointer;
     background-color: #fff;
+    /* background: linear-gradient(60deg, #fff 0%, #fff 100%); */
     color: ${props => props.theme.mainColor};
     border-color: ${props => props.theme.mainColor};
   }

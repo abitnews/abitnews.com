@@ -1,22 +1,18 @@
-let activeEnv = process.env.ACTIVE_ENV;
+// let activeEnv = process.env.ACTIVE_ENV;
 const path = require(`path`);
 
-if (!activeEnv) {
-  activeEnv = 'development';
-}
+// if (!activeEnv) {
+//   activeEnv = 'development';
+// }
 
-require('dotenv').config({
-  path: `.env.${activeEnv}`,
-});
+// require('dotenv').config({
+//   path: `.env.${activeEnv}`,
+// });
 
 module.exports = {
   siteMetadata: {
     title: 'abitnews',
     siteUrl: `https://abitnews.com`,
-  },
-  proxy: {
-    prefix: '/api',
-    url: process.env.URL_API,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

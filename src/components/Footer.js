@@ -30,7 +30,7 @@ const SocialContainer = styled.div`
   display: flex;
 `;
 const FooterContainer = styled.footer`
-  min-height: 10vh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   flex-direction: column;

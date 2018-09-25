@@ -1,4 +1,5 @@
 let activeEnv = process.env.ACTIVE_ENV;
+const path = require(`path`);
 
 if (!activeEnv) {
   activeEnv = 'development';
@@ -21,6 +22,15 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

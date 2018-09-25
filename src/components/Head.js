@@ -32,6 +32,26 @@ const Head = () => (
       href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400"
       rel="stylesheet"
     />
+    {/* Twitter Card tags */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="forgiangi" />
+    <meta name="twitter:title" content="abitnews" />
+    <meta
+      name="twitter:description"
+      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, libraries"
+    />
+    <meta name="twitter:image" content="" />
+    <script type="application/ld+json">{`
+          {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "abitnews",
+            "url": "http://abitnews.com",
+            "sameAs": [
+              "https://twitter.com/abitnewsbot"
+            ]
+          }
+      `}</script>
   </Helmet>
 );
 

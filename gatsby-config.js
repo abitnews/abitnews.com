@@ -11,6 +11,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'abitnews',
+    siteUrl: `https://abitnews.com`,
   },
   proxy: {
     prefix: '/api',
@@ -19,6 +20,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

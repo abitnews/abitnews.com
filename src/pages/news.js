@@ -10,7 +10,6 @@ class NewsPage extends React.Component {
     fetch('/api/news')
       .then(res => {
         res.json().then(data => {
-          console.log(data);
           this.setState({
             news: data.news,
           });

@@ -7,6 +7,7 @@ const categories = [
   'Libraries',
   'Frameworks',
   'Cool stuff',
+  'Nerd stuff',
   'Crypto',
   'Blockchain',
 ];

@@ -6,15 +6,12 @@ const letterChangeSpeed = 200;
 
 export default class TitleBlock extends React.PureComponent {
   state = { currentWordId: 0, numOfChars: 0, isDelete: false };
-  sleep = ms => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  };
+  sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  syncSetState = state => {
-    return new Promise(resolve =>
+  syncSetState = state => new Promise(resolve =>
       this.setState({ ...this.state, ...state }, () => resolve())
     );
-  };
+    
   changeWord = async () => {
     await this.sleep(500);
     await this.syncSetState({

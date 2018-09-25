@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from './Link';
+import PropTypes from 'prop-types';
 
 const NewsItem = ({ news }) => {
   const { title, tldr, url, category, source } = news;
@@ -20,6 +21,9 @@ const NewsItem = ({ news }) => {
   );
 };
 
+NewsItem.propTypes = {
+  news: PropTypes.object,
+};
 const Category = styled.div`
   font-weight: bold;
 `;

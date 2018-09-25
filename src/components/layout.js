@@ -22,6 +22,9 @@ const Layout = ({ children }) => (
   </ThemeProvider>
 );
 
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 injectGlobal`
   *,
   *:after,

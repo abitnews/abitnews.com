@@ -8,7 +8,7 @@ const Head = () => (
     <title>abitnews</title>
     <meta
       name="description"
-      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, libraries"
+      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, and a lot of other nerd stuff"
     />
     <meta
       name="keywords"
@@ -19,7 +19,7 @@ const Head = () => (
     <meta property="og:title" content="abitnews" />
     <meta
       property="og:description"
-      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, libraries"
+      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, and a lot of other nerd stuff"
     />
     <meta property="og:type" content="website" />
     <meta
@@ -38,7 +38,7 @@ const Head = () => (
     <meta name="twitter:title" content="abitnews" />
     <meta
       name="twitter:description"
-      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, libraries"
+      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, and a lot of other nerd stuff"
     />
     <meta name="twitter:image" content="" />
     <script type="application/ld+json">{`

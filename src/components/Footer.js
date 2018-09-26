@@ -14,9 +14,47 @@ const Footer = () => (
     <EmailLink target="_blank" href="mailto:hello@abitnews.com">
       hello@abitnews.com
     </EmailLink>
+    <HashTag>
+      Use the hashtag{' '}
+      <Link
+        href="https://twitter.com/search?q=%23abitnews"
+        style={{ fontWeight: 'bold' }}
+        aria-label="twitter-search-hashtag"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        #abitnews
+      </Link>{' '}
+      or tag&nbsp;
+      <Link
+        href="https://twitter.com/abitnewsbot"
+        style={{ fontWeight: 'bold' }}
+        aria-label="twitter-account"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @abitnewsbot
+      </Link>
+      , our bot will find it 🤖
+    </HashTag>
   </FooterContainer>
 );
-
+const Link = styled.a`
+  text-decoration: none;
+  color: ${props => props.theme.baseTextColor};
+  &:hover {
+    transition: 0.2s;
+    color: ${props => props.theme.mainColor};
+  }
+`;
+const HashTag = styled.h3`
+  font-weight: 400;
+  text-align: center;
+  margin-top: 25px;
+  @media screen and (max-width: 475px) {
+    font-size: 0.9rem;
+  }
+`;
 const EmailLink = styled.a`
   text-align: center;
   display: block;

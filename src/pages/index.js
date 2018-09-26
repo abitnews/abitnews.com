@@ -20,29 +20,7 @@ const HomePage = ({ data }) => (
           <SubTitle>Technology newsletter</SubTitle>
           <SubscriptionForm />
         </div>
-        <HashTag>
-          Use the hashtag{' '}
-          <Link
-            href="https://twitter.com/search?q=%23abitnews"
-            style={{ fontWeight: 'bold' }}
-            aria-label="twitter-search-hashtag"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            #abitnews
-          </Link>{' '}
-          or tag&nbsp;
-          <Link
-            href="https://twitter.com/abitnewsbot"
-            style={{ fontWeight: 'bold' }}
-            aria-label="twitter-account"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @abitnewsbot
-          </Link>
-          , our bot will find it 🤖
-        </HashTag>
+
         <ScrollDown>
           <span style={{ fontWeight: 'bold' }}>What&apos;s inside</span>
           <ScrollDownContainer>
@@ -143,11 +121,17 @@ const colors = {
 const gradients = {
   techSeeker:
     'background-image: linear-gradient(60deg, #ff758c 0%, #ff7eb3 100%);',
-  skynet: 'background-image: linear-gradient(60deg, #9575cd 0%, #7e57c2 100%)',
+  skynet:
+    'background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);',
+  // skynet: 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+
+  // frontend:
+  //   'background-image: linear-gradient(60deg, #00b8d4 0%, #039be5 100%)',
   frontend:
-    'background-image: linear-gradient(60deg, #00b8d4 0%, #039be5 100%)',
+    'background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);',
+
   crypto: 'background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%)',
-  dev: 'background-image: linear-gradient(60deg, #f57f17 0%, #ff5722 100%)',
+  dev: 'background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);',
 };
 
 const ImgContainer = styled.div`
@@ -218,27 +202,12 @@ const ScrollDown = styled.div`
 `;
 const ScrollDownTriangle = styled.svg`
   animation: ${moveUpAndDown} 0.9s infinite alternate;
-  fill: ${props => props.theme.baseTextColor};
+  fill: ${props => props.theme.mainColor};
   &:hover {
     cursor: pointer;
   }
 `;
-const Link = styled.a`
-  text-decoration: none;
-  color: ${props => props.theme.baseTextColor};
-  &:hover {
-    transition: 0.2s;
-    color: ${props => props.theme.mainColor};
-  }
-`;
-const HashTag = styled.h3`
-  font-weight: 400;
-  text-align: center;
-  margin-top: 25px;
-  @media screen and (max-width: 475px) {
-    font-size: 0.9rem;
-  }
-`;
+
 const TitleContainer = styled.div`
   display: flex;
   justify-content: center;

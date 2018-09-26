@@ -105,7 +105,7 @@ const EmailInput = styled.input`
 `;
 const SubscribeButton = styled.input`
   background-color: ${props => props.theme.mainColor};
-  /* background: linear-gradient(45deg, #80deea 0%, #05c3b6 100%); */
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   box-shadow: none;
   border: none;
   display: inline-block;

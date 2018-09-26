@@ -20,7 +20,7 @@ export default class SubscriptionForm extends React.PureComponent {
           target="_blank"
         >
           <label htmlFor="mce-EMAIL" style={{ display: 'none' }}>
-            Email Address
+            Enter you email here
           </label>
           <EmailInput
             type="email"

@@ -44,7 +44,10 @@ const HomePage = ({ data }) => (
         <ScrollDown>
           <span style={{ fontWeight: 'bold' }}>What&apos;s inside</span>
           <ScrollDownContainer>
-            <a href={`#${categoriesDescription[0].hashUrl}`}>
+            <a
+              href={`#${categoriesDescription[0].hashUrl}`}
+              aria-label="scroll-down"
+            >
               <ScrollDownTriangle
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 184.75 160"

@@ -25,6 +25,7 @@ const HomePage = ({ data }) => (
           <Link
             href="https://twitter.com/search?q=%23abitnews"
             style={{ fontWeight: 'bold' }}
+            aria-label="twitter-search-hashtag"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -34,6 +35,7 @@ const HomePage = ({ data }) => (
           <Link
             href="https://twitter.com/abitnewsbot"
             style={{ fontWeight: 'bold' }}
+            aria-label="twitter-account"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -261,7 +263,7 @@ const HomePageWrapper = styled.div`
 `;
 const SubTitle = styled.h2`
   font-size: 1.5rem;
-  margin: 10px 0;
+  margin: 20px 0;
   @media screen and (max-width: 475px) {
     font-size: 1.3rem;
   }

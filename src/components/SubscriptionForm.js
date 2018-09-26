@@ -19,17 +19,17 @@ export default class SubscriptionForm extends React.PureComponent {
           name="mc-embedded-subscribe-form"
           target="_blank"
         >
-          <label htmlFor="mce-EMAIL" style={{ display: 'none' }}>
-            Enter you email here
-          </label>
-          <EmailInput
-            type="email"
-            value={this.state.value}
-            onChange={event => this.setState({ email: event.target.value })}
-            name="EMAIL"
-            placeholder="Email"
-            id="mce-EMAIL"
-          />
+          <EmailContainer>
+            <EmailInput
+              type="email"
+              value={this.state.value}
+              onChange={event => this.setState({ email: event.target.value })}
+              name="EMAIL"
+              // placeholder="Email"
+              id="mce-EMAIL"
+            />
+            <EmailLabel htmlFor="mce-EMAIL">Email</EmailLabel>
+          </EmailContainer>
           <div id="mce-responses">
             <div id="mce-error-response" style={{ display: 'none' }} />
             <div id="mce-success-response" style={{ display: 'none' }} />
@@ -59,11 +59,24 @@ export default class SubscriptionForm extends React.PureComponent {
     );
   }
 }
+
+const EmailLabel = styled.label`
+  position: absolute;
+  bottom: 24px;
+  left: 21px;
+  transition: 0.3s;
+`;
+const EmailContainer = styled.div`
+  position: relative;
+  margin: 10px 0;
+  width: 100%;
+`;
 const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 380px;
 `;
 const EmailInput = styled.input`
   background-color: transparent;
@@ -80,6 +93,15 @@ const EmailInput = styled.input`
   padding: 0 20px;
   letter-spacing: 2px;
   min-width: 300px;
+  transition: 0.3s;
+  &:focus {
+    border: 1px solid ${props => props.theme.mainColor};
+    transition: 0.3s;
+    & + label {
+      transition: 0.3s;
+      transform: scale(0.8, 0.8) translate(-30px, -50px);
+    }
+  }
 `;
 const SubscribeButton = styled.input`
   background-color: ${props => props.theme.mainColor};

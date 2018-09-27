@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import ScrollableAnchor from 'react-scrollable-anchor';
-import { categoriesDescription, categories } from '../categories';
+import { categoriesDescription } from '../categories';
 import Layout from '../components/layout';
 import SubscriptionForm from '../components/SubscriptionForm';
 import Title from '../components/Title';
@@ -110,23 +110,19 @@ const ImgSection = styled.div`
   align-items: center;
 `;
 
-const colors = {
-  techSeeker: 'background-color: #f06292',
-  skynet: 'background-color: #5c6bc0',
-  frontend: 'background-color: #0091ea',
-  crypto: 'background-color: #65c3ad',
-  dev: 'background-color: #d84315',
-};
+// const colors = {
+//   techSeeker: 'background-color: #f06292',
+//   skynet: 'background-color: #5c6bc0',
+//   frontend: 'background-color: #0091ea',
+//   crypto: 'background-color: #65c3ad',
+//   dev: 'background-color: #d84315',
+// };
 
 const gradients = {
   techSeeker:
     'background-image: linear-gradient(60deg, #ff758c 0%, #ff7eb3 100%);',
   skynet:
     'background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);',
-  // skynet: 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-
-  // frontend:
-  //   'background-image: linear-gradient(60deg, #00b8d4 0%, #039be5 100%)',
   frontend:
     'background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);',
 

@@ -81,7 +81,7 @@ const Form = styled.form`
 const EmailInput = styled.input`
   background-color: transparent;
   border: 1px solid ${props => props.theme.secondaryColor};
-  border-radius: 2px;
+  border-radius: 5px;
   outline: none;
   height: 3rem;
   width: 100%;
@@ -120,7 +120,7 @@ const SubscribeButton = styled.input`
   letter-spacing: 1px;
   /* transition: 0.3s; */
   color: #fff;
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid transparent;
   letter-spacing: 2px;
   &:hover {

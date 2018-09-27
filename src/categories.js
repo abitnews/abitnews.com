@@ -46,7 +46,7 @@ const categoriesDescription = [
     key: 'dev',
     hashUrl: 'the-devs-den',
     title: "The dev's den",
-    description: `Hardcore programmers, backend stuff, optimizations, databases, Servers and
+    description: `Hardcore programmers, backend stuff, optimizations, databases, servers and
     other magic stuff nobody knew existed until everything crashed down`,
   },
 ];

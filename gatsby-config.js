@@ -28,14 +28,15 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-eslint',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|cache|public)/,
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
+        name: 'abitnews',
+        short_name: 'abitnews',
+        start_url: '/',
+        background_color: '#4353ff',
+        theme_color: '#4353ff',
+        display: 'minimal-ui',
+        icon: './static/abitnews-logo.png', // This path is relative to the root of the site.
       },
     },
     {
@@ -57,10 +58,10 @@ module.exports = {
         name: 'abitnews',
         short_name: 'abitnews',
         start_url: '/',
-        background_color: '#05c3b6',
-        theme_color: '#05c3b6',
+        background_color: '#4353ff',
+        theme_color: '#4353ff',
         display: 'minimal-ui',
-        icon: './static/abitnews.png', // This path is relative to the root of the site.
+        icon: 'src/images/abitnews-logo.png', // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,

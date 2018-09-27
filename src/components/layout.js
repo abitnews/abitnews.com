@@ -6,7 +6,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 const theme = {
-  mainColor: '#5c6bc0',
+  mainColor: '#4353ff',
   baseTextColor: '#37474f',
   secondaryColor: '#607d8b',
 };

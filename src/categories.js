@@ -1,4 +1,5 @@
 const categories = [
+  'Tech news',
   'Programming',
   'AI',
   'Machine learning',

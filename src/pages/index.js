@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import { categoriesDescription } from '../categories';
 import Layout from '../components/layout';
 import SubscriptionForm from '../components/SubscriptionForm';
@@ -25,8 +24,17 @@ const HomePage = ({ data }) => (
           <span style={{ fontWeight: 'bold' }}>What&apos;s inside</span>
           <ScrollDownContainer>
             <a
-              href={`#${categoriesDescription[0].hashUrl}`}
               aria-label="scroll-down"
+              onClick={() => {
+                const element = document.getElementById('techSeeker');
+                const y = element.getBoundingClientRect().top + window.scrollY;
+                if (element) {
+                  window.scroll({
+                    top: y,
+                    behavior: 'smooth',
+                  });
+                }
+              }}
             >
               <ScrollDownTriangle
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,22 +48,24 @@ const HomePage = ({ data }) => (
       </Content>
       <SectionContainer>
         {categoriesDescription.map((category, index) => (
-          <ScrollableAnchor id={category.hashUrl} key={category.key}>
-            <Section left={index % 2 ? true : false}>
-              <ImgSection>
-                <ImgContainer category={category.key}>
-                  <Img fluid={data[category.key].childImageSharp.fluid} />
-                </ImgContainer>
-              </ImgSection>
-              <div>
-                <SectionTitle>
-                  ~/
-                  {category.title}
-                </SectionTitle>
-                <SectionDescription>{category.description}</SectionDescription>
-              </div>
-            </Section>
-          </ScrollableAnchor>
+          <Section
+            left={index % 2 ? true : false}
+            key={category.key}
+            id={category.key}
+          >
+            <ImgSection>
+              <ImgContainer category={category.key}>
+                <Img fluid={data[category.key].childImageSharp.fluid} />
+              </ImgContainer>
+            </ImgSection>
+            <div>
+              <SectionTitle>
+                ~/
+                {category.title}
+              </SectionTitle>
+              <SectionDescription>{category.description}</SectionDescription>
+            </div>
+          </Section>
         ))}
       </SectionContainer>
     </HomePageWrapper>

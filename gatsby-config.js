@@ -52,18 +52,6 @@ module.exports = {
         // Enables Google Optimize using your container Id
       },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'abitnews',
-        short_name: 'abitnews',
-        start_url: '/',
-        background_color: '#4353ff',
-        theme_color: '#4353ff',
-        display: 'minimal-ui',
-        icon: 'src/images/abitnews-logo.png', // This path is relative to the root of the site.
-      },
-    },
     `gatsby-plugin-offline`,
   ],
 };

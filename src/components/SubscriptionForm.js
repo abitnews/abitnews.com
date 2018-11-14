@@ -27,6 +27,7 @@ export default class SubscriptionForm extends React.PureComponent {
               name="EMAIL"
               // placeholder="Email"
               id="mce-EMAIL"
+              required
             />
             <EmailLabel htmlFor="mce-EMAIL">Email</EmailLabel>
           </EmailContainer>
@@ -97,6 +98,12 @@ const EmailInput = styled.input`
   &:focus {
     border: 1px solid ${props => props.theme.mainColor};
     transition: 0.3s;
+    & + label {
+      transition: 0.3s;
+      transform: scale(0.8, 0.8) translate(-30px, -50px);
+    }
+  }
+  &:valid {
     & + label {
       transition: 0.3s;
       transform: scale(0.8, 0.8) translate(-30px, -50px);

@@ -66,6 +66,8 @@ const EmailLabel = styled.label`
   bottom: 24px;
   left: 21px;
   transition: 0.3s;
+  z-index: -1;
+
 `;
 const EmailContainer = styled.div`
   position: relative;

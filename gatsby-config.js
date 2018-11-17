@@ -52,6 +52,5 @@ module.exports = {
         // Enables Google Optimize using your container Id
       },
     },
-    `gatsby-plugin-offline`,
   ],
 };

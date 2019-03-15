@@ -8,7 +8,7 @@ const Head = () => (
     <title>abitnews</title>
     <meta
       name="description"
-      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, and a lot of other nerd stuff"
+      content="Tech news, 1/2 human, 1/2 bot. Programming, ML, AI, Blockchain, Nerd stuff."
     />
     <meta
       name="keywords"
@@ -19,7 +19,7 @@ const Head = () => (
     <meta property="og:title" content="abitnews" />
     <meta
       property="og:description"
-      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, and a lot of other nerd stuff"
+      content="Tech news, 1/2 human, 1/2 bot. Programming, ML, AI, Blockchain, Nerd stuff."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -32,13 +32,12 @@ const Head = () => (
       href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400"
       rel="stylesheet"
     />
-    {/* Twitter Card tags */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="forgiangi" />
     <meta name="twitter:title" content="abitnews" />
     <meta
       name="twitter:description"
-      content="Tech newsletter, programming, ML, AI, blockchain, crytpo, and a lot of other nerd stuff"
+      content="Tech news, 1/2 human, 1/2 bot. Programming, ML, AI, Blockchain, Nerd stuff."
     />
     <meta name="twitter:image" content="" />
     <script type="application/ld+json">{`

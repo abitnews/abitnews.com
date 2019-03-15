@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { categoriesDescription } from '../categories';
 import Layout from '../components/layout';
@@ -17,6 +16,21 @@ const HomePage = ({ data }) => (
         </TitleContainer>
         <div>
           <SubTitle>Technology newsletter</SubTitle>
+          <SubSubTitle>
+            <FractionContainer>
+              <Numerator>1</Numerator>
+              <Separator>/</Separator>
+              <Denominator>2</Denominator>
+            </FractionContainer>
+            <span style={{ marginRight: '20px' }}>human</span>
+            <FractionContainer>
+              <Numerator>1</Numerator>
+              <Separator>/</Separator>
+              <Denominator>2</Denominator>
+            </FractionContainer>
+            bot
+          </SubSubTitle>
+          {/* <SubSubTitle>1/2 human, 1/2 bot</SubSubTitle> */}
           <SubscriptionForm />
         </div>
 
@@ -71,49 +85,28 @@ const HomePage = ({ data }) => (
     </HomePageWrapper>
   </Layout>
 );
-HomePage.propTypes = {
-  data: PropTypes.object,
-};
-export const query = graphql`
-  query {
-    techSeeker: file(relativePath: { eq: "techSeeker.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    skynet: file(relativePath: { eq: "skynet.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    frontend: file(relativePath: { eq: "frontend.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    crypto: file(relativePath: { eq: "crypto.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    dev: file(relativePath: { eq: "dev.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
+
+const FractionContainer = styled.div`
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  letter-spacing: 0.001em;
+  text-align: center;
+  margin-right: 10px;
 `;
 
+const Numerator = styled.span`
+  display: block;
+  padding: 0.1em;
+`;
+
+const Denominator = styled.span`
+  border-top: thin solid black;
+`;
+
+const Separator = styled.span`
+  display: none;
+`;
 const ImgSection = styled.div`
   display: flex;
   justify-content: center;
@@ -140,6 +133,18 @@ const gradients = {
   dev: 'background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);',
 };
 
+const SubSubTitle = styled.div`
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  @media screen and (max-width: 475px) {
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 1rem;
+  }
+`;
 const ImgContainer = styled.div`
   border-radius: 5px;
   ${props => gradients[props.category]};
@@ -238,12 +243,52 @@ const HomePageWrapper = styled.div`
 `;
 const SubTitle = styled.h2`
   font-size: 1.5rem;
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
   @media screen and (max-width: 475px) {
     font-size: 1.3rem;
   }
   @media screen and (max-width: 400px) {
     font-size: 1rem;
+  }
+`;
+
+export const query = graphql`
+  query {
+    techSeeker: file(relativePath: { eq: "techSeeker.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 125) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    skynet: file(relativePath: { eq: "skynet.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 125) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    frontend: file(relativePath: { eq: "frontend.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 125) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    crypto: file(relativePath: { eq: "crypto.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 125) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    dev: file(relativePath: { eq: "dev.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 125) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `;
 

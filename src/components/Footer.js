@@ -10,6 +10,10 @@ const Footer = () => (
         social="github"
         link="https://github.com/forgiangi/abit.news"
       />
+      <SocialIcon
+        social="linkedin"
+        link="https://www.linkedin.com/company/abitnews/"
+      />
     </SocialContainer>
     <EmailLink target="_blank" href="mailto:hello@abitnews.com">
       hello@abitnews.com
@@ -71,6 +75,7 @@ const SocialContainer = styled.div`
   display: flex;
 `;
 const FooterContainer = styled.footer`
+  padding: 100px 50px;
   min-height: 20vh;
   display: flex;
   justify-content: center;

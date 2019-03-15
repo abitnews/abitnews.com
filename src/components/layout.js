@@ -40,9 +40,6 @@ injectGlobal`
     letter-spacing: 1px;
     color: ${theme.baseTextColor};
   }
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 const Main = styled.main`

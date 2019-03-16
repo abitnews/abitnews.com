@@ -15,7 +15,7 @@ const HomePage = ({ data }) => (
           <Title />
         </TitleContainer>
         <div>
-          <SubTitle>Technology newsletter</SubTitle>
+          {/* <SubTitle>Technology newsletter</SubTitle>
           <SubSubTitle>
             <FractionContainer>
               <Numerator>1</Numerator>
@@ -29,8 +29,8 @@ const HomePage = ({ data }) => (
               <Denominator>2</Denominator>
             </FractionContainer>
             bot
-          </SubSubTitle>
-          {/* <SubSubTitle>1/2 human, 1/2 bot</SubSubTitle> */}
+          </SubSubTitle> */}
+          <SubSubTitle>1/2 human, 1/2 bot</SubSubTitle>
           <SubscriptionForm />
         </div>
 

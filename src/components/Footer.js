@@ -6,10 +6,7 @@ const Footer = () => (
   <FooterContainer>
     <SocialContainer>
       <SocialIcon social="twitter" link="https://twitter.com/abitnewsbot" />
-      <SocialIcon
-        social="github"
-        link="https://github.com/forgiangi/abit.news"
-      />
+      <SocialIcon social="github" link="https://github.com/abitnews" />
       <SocialIcon
         social="linkedin"
         link="https://www.linkedin.com/company/abitnews/"

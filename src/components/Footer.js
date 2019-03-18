@@ -11,6 +11,10 @@ const Footer = () => (
         social="linkedin"
         link="https://www.linkedin.com/company/abitnews/"
       />
+      <SocialIcon
+        social="reddit"
+        link="https://www.linkedin.com/company/abitnews/"
+      />
     </SocialContainer>
     <EmailLink target="_blank" href="mailto:hello@abitnews.com">
       hello@abitnews.com

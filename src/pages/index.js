@@ -15,8 +15,8 @@ const HomePage = ({ data }) => (
           <Title />
         </TitleContainer>
         <div>
-          {/* <SubTitle>Technology newsletter</SubTitle>
-          <SubSubTitle>
+          <SubTitle>Technology news without noise</SubTitle>
+          {/* <SubSubTitle>
             <FractionContainer>
               <Numerator>1</Numerator>
               <Separator>/</Separator>

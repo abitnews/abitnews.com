@@ -33,7 +33,7 @@ const Head = () => (
       rel="stylesheet"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="abitnewsbot" />
+    <meta name="twitter:creator" content="forgiangi" />
     <meta name="twitter:title" content="abitnews" />
     <meta
       name="twitter:description"

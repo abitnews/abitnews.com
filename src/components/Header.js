@@ -15,9 +15,7 @@ const Header = () => (
           ~/
         </HomeLink>
       </Left>
-      <Right>
-        <NavLink to="/news">~/Last issues</NavLink>
-      </Right>
+      <Right>{/* <NavLink to="/news">Last issue</NavLink> */}</Right>
     </Navbar>
   </HeaderContainer>
 );
@@ -41,7 +39,6 @@ const NavLink = styled(Link)`
   padding: 0 10px;
   transition: 0.2s;
   white-space: nowrap;
-  font-weight: 700;
   &:hover {
     transition: 0.2s;
     color: ${props => props.theme.mainColor};

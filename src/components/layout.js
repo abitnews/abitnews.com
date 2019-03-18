@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import Head from './Head';
 import Footer from './Footer';
 import Header from './Header';
@@ -18,7 +18,6 @@ const Layout = ({ children }) => (
       <Header />
       <Main>{children}</Main>
       <Footer />
-      <GlobalStyle />
     </div>
   </ThemeProvider>
 );
@@ -26,8 +25,7 @@ const Layout = ({ children }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-const GlobalStyle = createGlobalStyle`
+injectGlobal`
   *,
   *:after,
   *:before {

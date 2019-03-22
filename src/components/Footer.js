@@ -64,10 +64,15 @@ const EmailLink = styled.a`
   text-align: center;
   display: block;
   text-decoration: none;
-  color: #000629;
+  color: ${({ theme }) => theme.baseTextColor};
   font-weight: 700;
   font-size: 20px;
   padding: 20px 0;
+  transition: 0.3s;
+  &:hover {
+    color: ${({ theme }) => theme.mainColor};
+    transition: 0.3s;
+  }
   @media screen and (max-width: 475px) {
     font-size: 1rem;
   }

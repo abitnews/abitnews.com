@@ -6,17 +6,17 @@ const Header = () => (
   <HeaderContainer>
     <Navbar>
       <Left>
-        <HomeLink
+        <NavLink
           to="/"
           activeStyle={{
             display: 'none',
           }}
         >
           ~/
-        </HomeLink>
+        </NavLink>
       </Left>
       <Right>
-        <NavLink to="/news">~/Last issues</NavLink>
+        <NavLink to="/news">~/Old issues</NavLink>
       </Right>
     </Navbar>
   </HeaderContainer>
@@ -42,6 +42,8 @@ const NavLink = styled(Link)`
   transition: 0.2s;
   white-space: nowrap;
   font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: bold;
   &:hover {
     transition: 0.2s;
     color: ${props => props.theme.mainColor};
@@ -57,10 +59,6 @@ const Navbar = styled.nav`
   margin: auto;
   display: flex;
   min-height: 3rem;
-`;
-
-const HomeLink = styled(NavLink)`
-  font-weight: bold;
 `;
 
 export default Header;

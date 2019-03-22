@@ -1,18 +1,10 @@
-// let activeEnv = process.env.ACTIVE_ENV;
 const path = require(`path`);
-
-// if (!activeEnv) {
-//   activeEnv = 'development';
-// }
-
-// require('dotenv').config({
-//   path: `.env.${activeEnv}`,
-// });
 
 module.exports = {
   siteMetadata: {
     title: 'abitnews',
     siteUrl: `https://abitnews.com`,
+    description: 'bit sized technology newsletter',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

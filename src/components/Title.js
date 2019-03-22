@@ -53,22 +53,57 @@ export default class TitleBlock extends React.PureComponent {
   }
   render() {
     return (
-      <>
-        <Title>a&nbsp;bit</Title>
-        <Title>
-          ~/
-          <Word isDelete={this.state.isDelete}>
-            {categories[this.state.currentWordId].substring(
-              0,
-              this.state.numOfChars
-            )}
-          </Word>
-        </Title>
-      </>
+      <TerminalContainer>
+        <TerminalMenu>
+          <CloseButton />
+        </TerminalMenu>
+        <TerminalView>
+          <TerminalLineHeader>a&nbsp;bit</TerminalLineHeader>
+          <TerminalLineText>
+            <InitLine>~/</InitLine>
+            <Word isDelete={this.state.isDelete}>
+              {categories[this.state.currentWordId].substring(
+                0,
+                this.state.numOfChars
+              )}
+            </Word>
+          </TerminalLineText>
+        </TerminalView>
+      </TerminalContainer>
     );
   }
 }
 
+const TerminalView = styled.div`
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+`;
+
+const CloseButton = styled.div`
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background-color: #ff5722;
+`;
+const TerminalMenu = styled.div`
+  background-color: blue;
+  padding: 10px;
+  height: 30px;
+  display: flex;
+  border-radius: 5px 5px 0 0;
+  background-color: #000;
+  justify-content: flex-start;
+  align-items: center;
+`;
+const TerminalContainer = styled.div`
+  background-color: #263137;
+  width: 760px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 6px 15px 0 rgba(36, 37, 38, 0.08);
+`;
 const blinkCaret = keyframes`
   from, to { border-color: transparent }
   50% { border-color: #607d8b }
@@ -83,22 +118,50 @@ const Word = styled.b`
   overflow: hidden;
   margin: 0 auto;
   animation: ${blinkCaret} 1s step-end infinite;
-  color: ${({ theme }) => theme.mainColor};
+  color: #fff;
   ${({ isDelete }) =>
     isDelete &&
     css`
-      background-color: #cfd8dc;
+      background-color: #607c8b;
       border-left: 5px solid;
       border-right: none;
       padding-left: 0;
     `};
 `;
 
-const Title = styled.h1`
+const TerminalLineHeader = styled.span`
+  color: #a7fdeb;
   font-size: 4rem;
   letter-spacing: 0.25rem;
   margin: 0;
   padding: 0 10px;
+  @media screen and (max-width: 900px) {
+    font-size: 3rem;
+  }
+  @media screen and (max-width: 650px) {
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 475px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const InitLine = styled.span`
+  color: #b9f6c9;
+`;
+
+const TerminalLineText = styled.span`
+  font-size: 4rem;
+  letter-spacing: 0.25rem;
+  margin: 0;
+  padding: 0 10px;
+  color: #fff;
   @media screen and (max-width: 900px) {
     font-size: 3rem;
   }

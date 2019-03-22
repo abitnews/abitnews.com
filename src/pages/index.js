@@ -1,39 +1,53 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import { categoriesDescription } from '../categories';
 import Layout from '../components/layout';
 import SubscriptionForm from '../components/SubscriptionForm';
 import Title from '../components/Title';
+import {
+  DevsDen,
+  TechSeeker,
+  Skynet,
+  CryptoProphet,
+  YeahScience,
+  Frontend,
+  Nerdvana,
+} from 'components/icons/categories';
 
-const HomePage = ({ data }) => (
+function getIcon(category) {
+  console.log(category);
+  switch (category) {
+    case 'techSeeker':
+      // console.log('TECHSEEKER');
+      return <TechSeeker />;
+    case 'devs':
+      return <DevsDen />;
+    case 'skynet':
+      return <Skynet />;
+    case 'yeahScience':
+      return <YeahScience />;
+    case 'crypto':
+      return <CryptoProphet />;
+    case 'frontend':
+      return <Frontend />;
+    case 'nerdvana':
+      return <Nerdvana />;
+    default:
+      console.log('DEFAULT');
+      return null;
+  }
+}
+
+const HomePage = () => (
   <Layout>
     <HomePageWrapper>
       <Content>
         <TitleContainer>
           <Title />
         </TitleContainer>
-        <div>
-          <SubTitle>Technology news without noise</SubTitle>
-          {/* <SubSubTitle>
-            <FractionContainer>
-              <Numerator>1</Numerator>
-              <Separator>/</Separator>
-              <Denominator>2</Denominator>
-            </FractionContainer>
-            <span style={{ marginRight: '20px' }}>human</span>
-            <FractionContainer>
-              <Numerator>1</Numerator>
-              <Separator>/</Separator>
-              <Denominator>2</Denominator>
-            </FractionContainer>
-            bot
-          </SubSubTitle> */}
-          <SubSubTitle>1/2 human, 1/2 bot</SubSubTitle>
-          <SubscriptionForm />
-        </div>
-
+        <SubTitle>bit sized technology newsletter</SubTitle>
+        <SubSubTitle>1/2 human, 1/2 bot </SubSubTitle>
+        <SubscriptionForm />
         <ScrollDown>
           <span style={{ fontWeight: 'bold' }}>What&apos;s inside</span>
           <ScrollDownContainer>
@@ -69,7 +83,7 @@ const HomePage = ({ data }) => (
           >
             <ImgSection>
               <ImgContainer category={category.key}>
-                <Img fluid={data[category.key].childImageSharp.fluid} />
+                {getIcon(category.key)}
               </ImgContainer>
             </ImgSection>
             <div>
@@ -86,27 +100,6 @@ const HomePage = ({ data }) => (
   </Layout>
 );
 
-const FractionContainer = styled.div`
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  letter-spacing: 0.001em;
-  text-align: center;
-  margin-right: 10px;
-`;
-
-const Numerator = styled.span`
-  display: block;
-  padding: 0.1em;
-`;
-
-const Denominator = styled.span`
-  border-top: thin solid black;
-`;
-
-const Separator = styled.span`
-  display: none;
-`;
 const ImgSection = styled.div`
   display: flex;
   justify-content: center;
@@ -122,15 +115,27 @@ const ImgSection = styled.div`
 // };
 
 const gradients = {
+  // techSeeker:
+  //   'background-image: linear-gradient(60deg, #ff758c 0%, #ff7eb3 100%);',
   techSeeker:
-    'background-image: linear-gradient(60deg, #ff758c 0%, #ff7eb3 100%);',
+    'background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);',
+  // nerdvana:
+  //   'background-image: linear-gradient(60deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);',
+  nerdvana:
+    'background-image: linear-gradient(to top, #e14fad 0%, #f9d423 100%);',
+  yeahScience:
+    'background-image: linear-gradient(135deg, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);',
   skynet:
     'background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);',
+  // frontend:
+  //   'background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);',
+  // frontend:
+  //   'background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);',
   frontend:
-    'background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);',
+    'background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);',
 
   crypto: 'background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%)',
-  dev: 'background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);',
+  devs: 'background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);',
 };
 
 const SubSubTitle = styled.div`
@@ -147,9 +152,16 @@ const SubSubTitle = styled.div`
 `;
 const ImgContainer = styled.div`
   border-radius: 5px;
+  padding: 10px;
   ${props => gradients[props.category]};
   height: 125px;
   width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    height: 100%;
+  }
   @media screen and (max-width: 800px) {
     height: 90px;
     width: 90px;
@@ -243,6 +255,7 @@ const HomePageWrapper = styled.div`
 `;
 const SubTitle = styled.h2`
   font-size: 1.5rem;
+  text-align: center;
   margin: 20px 0 10px 0;
   @media screen and (max-width: 475px) {
     font-size: 1.3rem;
@@ -252,44 +265,44 @@ const SubTitle = styled.h2`
   }
 `;
 
-export const query = graphql`
-  query {
-    techSeeker: file(relativePath: { eq: "techSeeker.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    skynet: file(relativePath: { eq: "skynet.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    frontend: file(relativePath: { eq: "frontend.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    crypto: file(relativePath: { eq: "crypto.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    dev: file(relativePath: { eq: "dev.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 125) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query {
+//     techSeeker: file(relativePath: { eq: "techSeeker.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 125) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     skynet: file(relativePath: { eq: "skynet.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 125) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     frontend: file(relativePath: { eq: "frontend.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 125) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     crypto: file(relativePath: { eq: "crypto.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 125) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//     dev: file(relativePath: { eq: "dev.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 125) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default HomePage;

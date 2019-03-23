@@ -15,10 +15,8 @@ import {
 } from 'components/icons/categories';
 
 function getIcon(category) {
-  console.log(category);
   switch (category) {
     case 'techSeeker':
-      // console.log('TECHSEEKER');
       return <TechSeeker />;
     case 'devs':
       return <DevsDen />;
@@ -33,7 +31,6 @@ function getIcon(category) {
     case 'nerdvana':
       return <Nerdvana />;
     default:
-      console.log('DEFAULT');
       return null;
   }
 }
@@ -45,7 +42,7 @@ const HomePage = () => (
         <TitleContainer>
           <Title />
         </TitleContainer>
-        <SubTitle>bit sized technology newsletter</SubTitle>
+        <SubTitle>bit-sized technology news</SubTitle>
         <SubSubTitle>1/2 human, 1/2 bot </SubSubTitle>
         <SubscriptionForm />
         <ScrollDown>
@@ -105,14 +102,6 @@ const ImgSection = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-// const colors = {
-//   techSeeker: 'background-color: #f06292',
-//   skynet: 'background-color: #5c6bc0',
-//   frontend: 'background-color: #0091ea',
-//   crypto: 'background-color: #65c3ad',
-//   dev: 'background-color: #d84315',
-// };
 
 const gradients = {
   // techSeeker:
@@ -200,6 +189,9 @@ const Section = styled.div`
   ${SectionTitle} {
     ${props => (props.left ? 'text-align: right' : 'text-align: left')};
   }
+  @media screen and (max-width: 475px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const SectionContainer = styled.div`
@@ -264,45 +256,4 @@ const SubTitle = styled.h2`
     font-size: 1rem;
   }
 `;
-
-// export const query = graphql`
-//   query {
-//     techSeeker: file(relativePath: { eq: "techSeeker.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 125) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//     skynet: file(relativePath: { eq: "skynet.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 125) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//     frontend: file(relativePath: { eq: "frontend.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 125) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//     crypto: file(relativePath: { eq: "crypto.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 125) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//     dev: file(relativePath: { eq: "dev.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 125) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `;
-
 export default HomePage;

@@ -32,7 +32,7 @@ const categoriesDescription = [
     key: 'skynet',
     hashUrl: 'news-from-skynet',
     title: 'News from Skynet',
-    description: `Machine learning, Artificial intelligence and other stuff that will replace you in a couple of years`,
+    description: `Machine learning, Artificial intelligence, IoT and other stuff that will replace you in a couple of years`,
     hashtag: '#NewsFromSkynet',
   },
   {

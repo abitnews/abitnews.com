@@ -99,7 +99,7 @@ const TerminalMenu = styled.div`
 `;
 const TerminalContainer = styled.div`
   background-color: #263137;
-  width: 760px;
+  width: 100%;
   border-radius: 5px;
   position: relative;
   box-shadow: 0 6px 15px 0 rgba(36, 37, 38, 0.08);

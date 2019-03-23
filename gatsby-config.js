@@ -20,6 +20,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.join(__dirname, `_issues`),
+        name: 'markdown-pages',
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'abitnews',

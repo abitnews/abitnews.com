@@ -6,17 +6,24 @@ const Header = () => (
   <HeaderContainer>
     <Navbar>
       <Left>
-        <NavLink
+        <HomeLink
           to="/"
           activeStyle={{
             display: 'none',
           }}
         >
-          ~/
-        </NavLink>
+          ~
+        </HomeLink>
       </Left>
       <Right>
-        <NavLink to="/news">~/Old issues</NavLink>
+        <NavLink
+          to="/issues"
+          activeStyle={{
+            display: 'none',
+          }}
+        >
+          ~/issues
+        </NavLink>
       </Right>
     </Navbar>
   </HeaderContainer>
@@ -27,6 +34,7 @@ const Left = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
+  align-items: center;
 `;
 
 const Right = styled.div`
@@ -42,12 +50,19 @@ const NavLink = styled(Link)`
   transition: 0.2s;
   white-space: nowrap;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   &:hover {
     transition: 0.2s;
     color: ${props => props.theme.mainColor};
   }
+  @media screen and (max-width: 475px) {
+    font-size: 0.9rem;
+  }
+`;
+
+const HomeLink = styled(NavLink)`
+  font-size: 2em;
 `;
 const HeaderContainer = styled.header`
   margin: auto;

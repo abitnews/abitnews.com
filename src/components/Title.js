@@ -56,6 +56,7 @@ export default class TitleBlock extends React.PureComponent {
       <TerminalContainer>
         <TerminalMenu>
           <CloseButton />
+          <TerminalName>abitnews</TerminalName>
         </TerminalMenu>
         <TerminalView>
           <TerminalLineHeader>a&nbsp;bit</TerminalLineHeader>
@@ -74,6 +75,11 @@ export default class TitleBlock extends React.PureComponent {
   }
 }
 
+const TerminalName = styled.div`
+  width: 100%;
+  text-align: center;
+  color: #fff;
+`;
 const TerminalView = styled.div`
   padding: 30px;
   display: flex;
@@ -86,6 +92,7 @@ const CloseButton = styled.div`
   width: 17px;
   border-radius: 50%;
   background-color: #ff5722;
+  position: absolute;
 `;
 const TerminalMenu = styled.div`
   padding: 10px;

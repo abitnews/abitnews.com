@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { categoriesDescription } from '../categories';
-import Layout from '../components/layout';
 import SubscriptionForm from '../components/SubscriptionForm';
 import Title from '../components/Title';
+import { graphql } from 'gatsby';
+
 import {
   DevsDen,
   TechSeeker,
@@ -94,6 +95,16 @@ const HomePage = () => (
     </SectionContainer>
   </HomePageWrapper>
 );
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
 
 const ImgSection = styled.div`
   display: flex;

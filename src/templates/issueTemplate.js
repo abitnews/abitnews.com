@@ -1,20 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import SEO from 'components/SEO';
 
-export default function Template({ data }) {
-  const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+export default function Template({ data, pageContext }) {
+  console.log(data);
+  console.log(pageContext);
+  const issue = data.markdownRemark;
+
+  const { previous, next } = pageContext;
+
   return (
     <IssueContainer>
+      <SEO
+        title={issue.frontmatter.title}
+        description={issue.frontmatter.description || issue.excerpt}
+      />
       <Frontmatter>
-        <Title>{frontmatter.title}</Title>
-        <Date>{frontmatter.date}</Date>
+        <Title>{issue.frontmatter.title}</Title>
+        <Date>{issue.frontmatter.date}</Date>
       </Frontmatter>
-
+      {/* <ul
+        style={{
+          display: `flex`,
+          flexWrap: `wrap`,
+          justifyContent: `space-between`,
+          listStyle: `none`,
+          padding: 0,
+        }}
+      >
+        <li>
+          {previous && (
+            <Link to={previous.fields.slug} rel="prev">
+              ← {previous.frontmatter.title}
+            </Link>
+          )}
+        </li>
+        <li>
+          {next && (
+            <Link to={next.fields.slug} rel="next">
+              {next.frontmatter.title} →
+            </Link>
+          )}
+        </li>
+      </ul> */}
       <div
         className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: issue.html }}
       />
     </IssueContainer>
   );
@@ -58,14 +90,17 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.mainColor};
 `;
 const Date = styled.div``;
+
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
         title
+        date(formatString: "MMMM DD, YYYY")
+        description
       }
     }
   }

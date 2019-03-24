@@ -1,21 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
+import SEO from 'components/SEO';
 
 export default function Issues({ data }) {
   const numberOfIssues = data.allMarkdownRemark.totalCount;
   const issues = data.allMarkdownRemark.edges;
+
   return (
     <Container>
-      <Title>Issues ({numberOfIssues})</Title>
+      <SEO title={'All issues'} />
+      <PageTitle>All issues ({numberOfIssues})</PageTitle>
       <IssueList>
         {issues.map(({ node }) => (
           <Issue key={node.id}>
             <IssueTitle>
               ~/
-              <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
             </IssueTitle>
-            <IssueDate>{node.frontmatter.date}</IssueDate>
+            <div style={{ marginLeft: '40px' }}>
+              <IssueDate>{node.frontmatter.date}</IssueDate>
+              <IssueDescription>
+                {node.frontmatter.description}{' '}
+                <Link to={node.fields.slug}>and more...</Link>
+              </IssueDescription>
+            </div>
           </Issue>
         ))}
       </IssueList>
@@ -23,7 +32,12 @@ export default function Issues({ data }) {
   );
 }
 
+const IssueDescription = styled.p`
+  font-size: 0.9em;
+`;
 const IssueTitle = styled.h2`
+  display: flex;
+  align-items: center;
   a {
     margin-left: 10px;
     color: ${({ theme }) => theme.baseTextColor};
@@ -33,9 +47,8 @@ const IssueTitle = styled.h2`
   }
 `;
 const IssueDate = styled.div`
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: bold;
-  margin-left: 50px;
 `;
 const IssueList = styled.ul`
   margin: 0;
@@ -43,29 +56,38 @@ const IssueList = styled.ul`
   list-style: none;
 `;
 const Issue = styled.li`
-  display: inline-flex;
-  align-items: center;
+  /* display: inline-flex; */
+  /* align-items: center; */
 `;
 
-const Title = styled.h1``;
+const PageTitle = styled.h1``;
 const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   max-width: 800px;
 `;
-export const query = graphql`
+
+export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
           id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            path
-          }
           excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
         }
       }
     }

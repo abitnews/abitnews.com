@@ -1,14 +1,16 @@
 const categories = [
   'News',
+  'Science',
   'Programming',
+  'Technology',
+  'IoT',
+  'Nerd stuff',
   'ML/AI',
   'UX/UI',
-  'Tweets',
-  'Libraries',
-  'Frameworks',
-  'Nerd stuff',
-  'Crypto',
   'Blockchain',
+  'Cryptos',
+  'Books',
+  'Tweets',
 ];
 
 const categoriesDescription = [
@@ -39,8 +41,7 @@ const categoriesDescription = [
     key: 'yeahScience',
     hashUrl: 'yeah-science',
     title: 'Yeah Science!',
-    description: `The coolest tech news, nothing too complex,
-     everything you need to look like a tech guru in a discussion`,
+    description: `Science does not care about what you think`,
     hashtag: '#YeahScience',
   },
   {

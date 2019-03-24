@@ -1,7 +1,7 @@
 ---
-path: '/issues/issue-1'
 date: '2019-03-18'
 title: 'Issue #1'
+description: 'Bill Gates 10 technologies for 2019, Welcoming the Era of Deep Neuroevolution, 7 Practical Tips for Cheating at Design, the NSA has a Github account, Why Are Bots Unable to Check "I Am Not a Robot" Checkboxes?'
 ---
 
 # Hello World!

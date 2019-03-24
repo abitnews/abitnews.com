@@ -7,6 +7,11 @@ const Header = ({ currentTheme, handleThemeChange }) => (
   <HeaderContainer>
     <Navbar>
       <Left>
+        {/* <NavLogo to="/">
+          ~/a
+          <span>bit</span>
+          news
+        </NavLogo> */}
         <HomeLink
           to="/"
           activeStyle={{
@@ -33,6 +38,13 @@ const Header = ({ currentTheme, handleThemeChange }) => (
   </HeaderContainer>
 );
 
+const NavLogo = styled.div`
+  font-size: 1.2em;
+  span {
+    font-weight: bold;
+    color: ${({ theme }) => theme.mainColor};
+  }
+`;
 const ActionsContainer = styled.div`
   margin-left: 30px;
   display: inline-flex;
@@ -81,7 +93,7 @@ const Navbar = styled.nav`
   max-width: 780px;
   margin: auto;
   display: flex;
-  min-height: 3rem;
+  height: 70px;
   align-items: center;
 `;
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import Head from './Head';
+import SEO from './SEO';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -26,7 +26,6 @@ export default function Layout({ children }) {
 
   useLayoutEffect(
     () => {
-      console.log('use effetcs');
       const preferredTheme = localStorage.getItem('theme');
       if (preferredTheme) {
         setTheme(preferredTheme);
@@ -38,7 +37,7 @@ export default function Layout({ children }) {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <AppContainer>
-        <Head />
+        <SEO />
         <Header
           currentTheme={theme}
           handleThemeChange={() => {
@@ -77,6 +76,14 @@ const GlobalStyle = createGlobalStyle`
 const AppContainer = styled.div`
   background-color: ${({ theme }) => theme.backgroundColor};
   color: ${({ theme }) => theme.baseTextColor};
+  a {
+    transition: 0.3s;
+    color: ${({ theme }) => theme.baseTextColor};
+    &:hover {
+      transition: 0.3s;
+      color: ${({ theme }) => theme.mainColor};
+    }
+  }
 `;
 const Main = styled.main`
   min-height: 100vh;

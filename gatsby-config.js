@@ -3,8 +3,25 @@ const path = require(`path`);
 module.exports = {
   siteMetadata: {
     title: 'abitnews',
+    lang: 'en',
     siteUrl: `https://abitnews.com`,
-    description: 'bit sized technology newsletter',
+    description: 'bit-sized technology newsletter, 1/2 human, 1/2 bot',
+    author: 'abitnews',
+    keywords: [
+      'news',
+      'newsletter',
+      'tech',
+      'machine learning',
+      'artificial intelligence',
+      'blockchain',
+    ],
+    social: {
+      twitter: {
+        author: '@abitnewsbot',
+        description:
+          "bit-sized technology newsletter, 1/2 human, 1/2 bot. Tag me or use #abitnews to get my attention, if i'm not crashed",
+      },
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -63,7 +80,7 @@ module.exports = {
         background_color: '#4353ff',
         theme_color: '#4353ff',
         display: 'minimal-ui',
-        icon: './static/abitnews-logo.png', // This path is relative to the root of the site.
+        icon: './src/images/logo.png', // This path is relative to the root of the site.
       },
     },
     {
@@ -79,5 +96,6 @@ module.exports = {
         // Enables Google Optimize using your container Id
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 };

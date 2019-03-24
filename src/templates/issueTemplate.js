@@ -41,7 +41,11 @@ const IssueContainer = styled.div`
       font-size: 1.5rem;
     }
   }
+  /* h3 {
+    margin-left: 10px;
+  } */
   p {
+    margin-left: 8px;
     @media screen and (max-width: 475px) {
       font-size: 0.9rem;
     }

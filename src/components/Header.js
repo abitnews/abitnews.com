@@ -38,13 +38,6 @@ const Header = ({ currentTheme, handleThemeChange }) => (
   </HeaderContainer>
 );
 
-const NavLogo = styled.div`
-  font-size: 1.2em;
-  span {
-    font-weight: bold;
-    color: ${({ theme }) => theme.mainColor};
-  }
-`;
 const ActionsContainer = styled.div`
   margin-left: 30px;
   display: inline-flex;
@@ -83,6 +76,9 @@ const NavLink = styled(Link)`
 
 const HomeLink = styled(NavLink)`
   font-size: 2em;
+  @media screen and (max-width: 475px) {
+    font-size: 1.8rem;
+  }
 `;
 const HeaderContainer = styled.header`
   margin: auto;
@@ -90,11 +86,12 @@ const HeaderContainer = styled.header`
 `;
 
 const Navbar = styled.nav`
-  max-width: 780px;
+  max-width: 820px;
   margin: auto;
   display: flex;
   height: 70px;
   align-items: center;
+  padding: 0 10px;
 `;
 
 export default Header;

@@ -26,8 +26,7 @@ const categoriesDescription = [
     key: 'nerdvana',
     hashUrl: 'nerdvana',
     title: 'Nerdvana',
-    description: `The coolest tech news, nothing too complex,
-     everything you need to look like a tech guru in a discussion`,
+    description: `The goal of every nerd path`,
     hashtag: '#Nerdvana',
   },
   {
@@ -41,7 +40,7 @@ const categoriesDescription = [
     key: 'yeahScience',
     hashUrl: 'yeah-science',
     title: 'Yeah Science!',
-    description: `Everything related to humanities disciplines`,
+    description: `Astrology and homeopathy`,
     hashtag: '#YeahScience',
   },
   {

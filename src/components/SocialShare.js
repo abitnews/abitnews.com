@@ -9,9 +9,6 @@ import {
 export default function SocialShare({ url, title }) {
   function handleShareTwitter(e) {
     e.preventDefault();
-    console.log(title);
-    console.log('share on twitter', `${url}`);
-    // var url = 'http://google.com';
     const text = `Checkout abitnews ${title}' @abitnewsbot`;
     window.open(
       `http://twitter.com/share?url=${encodeURIComponent(
@@ -29,13 +26,6 @@ export default function SocialShare({ url, title }) {
       '',
       'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0'
     );
-    // const text = `Checkout abitnews ${title}' @abitnewsbot`;
-    // window.open(
-    //   `http://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-    //     url
-    //   )}`,
-    //   'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0'
-    // );
   }
 
   function handleShareReddit(e) {
@@ -58,7 +48,7 @@ export default function SocialShare({ url, title }) {
         <IconRedditShare onClick={handleShareReddit} />
       </IconContainer>
       <IconContainer>
-        <IconLinkedinShare small onClick={handleShareLinkedin} />
+        <IconLinkedinShare onClick={handleShareLinkedin} />
       </IconContainer>
     </ShareContainer>
   );

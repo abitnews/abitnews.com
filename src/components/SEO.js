@@ -21,7 +21,6 @@ export default function SEO({ description, meta = [], keywords = [], title }) {
     }
   `);
 
-  console.log(site);
   const metaDescription = description || site.siteMetadata.description;
 
   return (
@@ -41,14 +40,11 @@ export default function SEO({ description, meta = [], keywords = [], title }) {
           property: `og:title`,
           content: title,
         },
-        // { FIXME:
-        //   property: 'og:image',
-        //   content="https://abitnews.com/abitnews-logo-square.png"
-        // },
-        // {
-        //   name: 'twitter:image',
-        //   content="https://abitnews.com/abitnews-logo-square.png"
-        // },
+        {
+          property: 'og:image',
+          content: `https://abitnews.com/abitnews-logo-square.png`,
+        },
+
         {
           property: `og:description`,
           content: metaDescription,
@@ -72,6 +68,10 @@ export default function SEO({ description, meta = [], keywords = [], title }) {
         {
           name: `twitter:description`,
           content: site.siteMetadata.social.twitter.description,
+        },
+        {
+          name: 'twitter:image',
+          content: 'https://abitnews.com/abitnews-logo-square.png',
         },
       ]
         .concat(

@@ -34,6 +34,9 @@ export default function Issues({ data }) {
 
 const IssueDescription = styled.p`
   font-size: 0.9em;
+  @media screen and (max-width: 475px) {
+    font-size: 0.8rem;
+  }
 `;
 const IssueTitle = styled.h2`
   display: flex;

@@ -7,37 +7,37 @@ import IconLinkedin from './Linkedin';
 import IconTwitter from './Twitter';
 import IconReddit from './Reddit';
 
-const SocialIcon = ({ social, link = '', small, onClick = () => {} }) => {
+const SocialIcon = ({ social, link }) => {
   const selectSocial = () => {
     switch (social) {
       case 'twitter':
         return (
-          <Link to={link} onClick={onClick}>
-            <SocialIconWrapper twitter small={small}>
+          <Link to={link}>
+            <SocialIconWrapper twitter>
               <IconTwitter />
             </SocialIconWrapper>
           </Link>
         );
       case 'linkedin':
         return (
-          <Link to={link} onClick={onClick}>
-            <SocialIconWrapper linkedin small={small}>
+          <Link to={link}>
+            <SocialIconWrapper linkedin>
               <IconLinkedin />
             </SocialIconWrapper>
           </Link>
         );
       case 'github':
         return (
-          <Link to={link} onClick={onClick}>
-            <SocialIconWrapper github small={small}>
+          <Link to={link}>
+            <SocialIconWrapper github>
               <IconGithub />
             </SocialIconWrapper>
           </Link>
         );
       case 'reddit':
         return (
-          <Link to={link} onClick={onClick}>
-            <SocialIconWrapper reddit small={small}>
+          <Link to={link}>
+            <SocialIconWrapper reddit>
               <IconReddit />
             </SocialIconWrapper>
           </Link>
@@ -108,12 +108,5 @@ const SocialIconWrapper = styled.div`
       transform: rotate(-360deg);
     }
   }
-  ${({ small }) =>
-    small &&
-    css`
-      height: 30px;
-      width: 30px;
-      margin: 0 12px;
-    `};
 `;
 export { IconGithub, IconTwitter, IconLinkedin, IconReddit, SocialIcon };

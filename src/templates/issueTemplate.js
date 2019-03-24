@@ -5,12 +5,8 @@ import SEO from 'components/SEO';
 import SocialShare from 'components/SocialShare';
 
 export default function Template({ data, pageContext }) {
-  console.log(data);
-  console.log(pageContext);
   const issue = data.markdownRemark;
-  console.log('issue', issue);
   const { previous, next } = pageContext;
-
   return (
     <IssueContainer>
       <SEO
@@ -59,6 +55,11 @@ export default function Template({ data, pageContext }) {
 
 const Frontmatter = styled.div`
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 475px) {
+    align-items: center;
+  }
 `;
 const IssueContainer = styled.div`
   min-height: 100vh;
@@ -72,20 +73,30 @@ const IssueContainer = styled.div`
       color: ${({ theme }) => theme.mainColor};
     }
   }
+  h1 {
+    @media screen and (max-width: 475px) {
+      text-align: center;
+    }
+  }
   h2 {
     margin-top: 50px;
     color: ${({ theme }) => theme.mainColor};
     @media screen and (max-width: 475px) {
       font-size: 1.5rem;
+      text-align: center;
     }
   }
-  /* h3 {
-    margin-left: 10px;
-  } */
+  h3 {
+    @media screen and (max-width: 475px) {
+      text-align: center;
+      font-size: 1em;
+    }
+  }
   p {
     margin-left: 8px;
     @media screen and (max-width: 475px) {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      text-align: center;
     }
   }
 `;

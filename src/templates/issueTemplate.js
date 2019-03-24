@@ -7,6 +7,8 @@ import SocialShare from 'components/SocialShare';
 export default function Template({ data, pageContext }) {
   const issue = data.markdownRemark;
   const { previous, next } = pageContext;
+  console.log(previous);
+  console.log(next);
   return (
     <IssueContainer>
       <SEO
@@ -20,31 +22,23 @@ export default function Template({ data, pageContext }) {
           url={`${data.site.siteMetadata.siteUrl}${pageContext.slug}`}
           title={issue.frontmatter.title}
         />
+        <PrevNext>
+          <li>
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </li>
+        </PrevNext>
       </Frontmatter>
-      {/* <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
-        <li>
-          {previous && (
-            <Link to={previous.fields.slug} rel="prev">
-              ← {previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Link to={next.fields.slug} rel="next">
-              {next.frontmatter.title} →
-            </Link>
-          )}
-        </li>
-      </ul> */}
       <div
         className="blog-post-content"
         dangerouslySetInnerHTML={{ __html: issue.html }}
@@ -52,6 +46,14 @@ export default function Template({ data, pageContext }) {
     </IssueContainer>
   );
 }
+
+const PrevNext = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`;
 
 const Frontmatter = styled.div`
   margin-bottom: 40px;

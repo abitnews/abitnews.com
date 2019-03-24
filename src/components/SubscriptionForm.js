@@ -11,7 +11,7 @@ export default class SubscriptionForm extends React.PureComponent {
   };
   render() {
     return (
-      <div id="mc_embed_signup">
+      <FormContainer id="mc_embed_signup">
         <Form
           action="https://abitcompany.us17.list-manage.com/subscribe/post?u=0fefed5f87ff20de347b84135&amp;id=f437b31b87"
           method="post"
@@ -22,10 +22,9 @@ export default class SubscriptionForm extends React.PureComponent {
           <EmailContainer>
             <EmailInput
               type="email"
-              value={this.state.value}
+              value={this.state.email}
               onChange={event => this.setState({ email: event.target.value })}
               name="EMAIL"
-              // placeholder="Email"
               id="mce-EMAIL"
               required
             />
@@ -56,18 +55,22 @@ export default class SubscriptionForm extends React.PureComponent {
             id="mc-embedded-subscribe"
           />
         </Form>
-      </div>
+      </FormContainer>
     );
   }
 }
 
+const FormContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`;
 const EmailLabel = styled.label`
   position: absolute;
   bottom: 24px;
   left: 21px;
   transition: 0.3s;
-  z-index: -1;
-
+  color: ${({ theme }) => theme.baseTextColor};
 `;
 const EmailContainer = styled.div`
   position: relative;
@@ -80,10 +83,11 @@ const Form = styled.form`
   align-items: center;
   flex-direction: column;
   max-width: 380px;
+  width: 100%;
 `;
 const EmailInput = styled.input`
   background-color: transparent;
-  border: 1px solid ${props => props.theme.secondaryColor};
+  border: 1px solid ${({ theme }) => theme.secondaryColor};
   border-radius: 5px;
   outline: none;
   height: 3rem;
@@ -97,15 +101,16 @@ const EmailInput = styled.input`
   letter-spacing: 2px;
   min-width: 300px;
   transition: 0.3s;
+  color: ${({ theme }) => theme.baseTextColor};
   &:focus {
-    border: 1px solid ${props => props.theme.mainColor};
+    border: 1px solid ${({ theme }) => theme.mainColor};
     transition: 0.3s;
     & + label {
       transition: 0.3s;
       transform: scale(0.8, 0.8) translate(-30px, -50px);
     }
   }
-  &:valid {
+  &[value]:not([value='']) {
     & + label {
       transition: 0.3s;
       transform: scale(0.8, 0.8) translate(-30px, -50px);

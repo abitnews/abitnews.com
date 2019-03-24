@@ -53,22 +53,63 @@ export default class TitleBlock extends React.PureComponent {
   }
   render() {
     return (
-      <>
-        <Title>a&nbsp;bit</Title>
-        <Title>
-          ~/
-          <Word isDelete={this.state.isDelete}>
-            {categories[this.state.currentWordId].substring(
-              0,
-              this.state.numOfChars
-            )}
-          </Word>
-        </Title>
-      </>
+      <TerminalContainer>
+        <TerminalMenu>
+          <CloseButton />
+          <TerminalName>abitnews</TerminalName>
+        </TerminalMenu>
+        <TerminalView>
+          <TerminalLineHeader>a&nbsp;bit</TerminalLineHeader>
+          <TerminalLineText>
+            <InitLine>~/</InitLine>
+            <Word isDelete={this.state.isDelete}>
+              {categories[this.state.currentWordId].substring(
+                0,
+                this.state.numOfChars
+              )}
+            </Word>
+          </TerminalLineText>
+        </TerminalView>
+      </TerminalContainer>
     );
   }
 }
 
+const TerminalName = styled.div`
+  width: 100%;
+  text-align: center;
+  color: #fff;
+`;
+const TerminalView = styled.div`
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+`;
+
+const CloseButton = styled.div`
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background-color: #ff5722;
+  position: absolute;
+`;
+const TerminalMenu = styled.div`
+  padding: 10px;
+  height: 30px;
+  display: flex;
+  border-radius: 5px 5px 0 0;
+  background-color: #000;
+  justify-content: flex-start;
+  align-items: center;
+`;
+const TerminalContainer = styled.div`
+  background-color: ${({ theme }) => theme.backgroundContrast};
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 6px 15px 0 rgba(36, 37, 38, 0.08);
+`;
 const blinkCaret = keyframes`
   from, to { border-color: transparent }
   50% { border-color: #607d8b }
@@ -76,7 +117,6 @@ const blinkCaret = keyframes`
 
 const Word = styled.b`
   border-right: 5px solid;
-  /* border-right: 5px solid transparent; */
   border-left: none;
   padding-right: 10px;
   padding-left: 5px;
@@ -84,31 +124,50 @@ const Word = styled.b`
   overflow: hidden;
   margin: 0 auto;
   animation: ${blinkCaret} 1s step-end infinite;
-  color: ${props => props.theme.mainColor};
-  /* background: linear-gradient(-45deg, #80deea 0%, #05c3b6 100%); */
-  /* background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
-  /* background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); */
-  /* background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); */
-  /* background: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%); */
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
-  ${props =>
-    props.isDelete &&
+  color: #fff;
+  ${({ isDelete }) =>
+    isDelete &&
     css`
-      background-color: #cfd8dc;
+      background-color: #607c8b;
       border-left: 5px solid;
       border-right: none;
       padding-left: 0;
     `};
 `;
 
-// ${typing} 2s steps(10, start)
-
-const Title = styled.h1`
+const TerminalLineHeader = styled.span`
+  color: #a7fdeb;
   font-size: 4rem;
   letter-spacing: 0.25rem;
   margin: 0;
   padding: 0 10px;
+  @media screen and (max-width: 900px) {
+    font-size: 3rem;
+  }
+  @media screen and (max-width: 650px) {
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 475px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const InitLine = styled.span`
+  color: #b9f6c9;
+`;
+
+const TerminalLineText = styled.span`
+  font-size: 4rem;
+  letter-spacing: 0.25rem;
+  margin: 0;
+  padding: 0 10px;
+  color: #fff;
   @media screen and (max-width: 900px) {
     font-size: 3rem;
   }

@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SocialIcon } from './icons';
+import { SocialIcon } from 'components/icons/SocialIcon';
 
 const Footer = () => (
   <FooterContainer>
     <SocialContainer>
       <SocialIcon social="twitter" link="https://twitter.com/abitnewsbot" />
+      <SocialIcon social="github" link="https://github.com/abitnews" />
       <SocialIcon
-        social="github"
-        link="https://github.com/forgiangi/abit.news"
+        social="linkedin"
+        link="https://www.linkedin.com/company/abitnews/"
+      />
+      <SocialIcon
+        social="reddit"
+        link="https://www.linkedin.com/company/abitnews/"
       />
     </SocialContainer>
     <EmailLink target="_blank" href="mailto:hello@abitnews.com">
@@ -59,10 +64,15 @@ const EmailLink = styled.a`
   text-align: center;
   display: block;
   text-decoration: none;
-  color: #000629;
+  color: ${({ theme }) => theme.baseTextColor};
   font-weight: 700;
   font-size: 20px;
   padding: 20px 0;
+  transition: 0.3s;
+  &:hover {
+    color: ${({ theme }) => theme.mainColor};
+    transition: 0.3s;
+  }
   @media screen and (max-width: 475px) {
     font-size: 1rem;
   }
@@ -71,6 +81,7 @@ const SocialContainer = styled.div`
   display: flex;
 `;
 const FooterContainer = styled.footer`
+  padding: 100px 50px;
   min-height: 20vh;
   display: flex;
   justify-content: center;

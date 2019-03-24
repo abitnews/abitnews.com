@@ -22,7 +22,7 @@ export default class SubscriptionForm extends React.PureComponent {
           <EmailContainer>
             <EmailInput
               type="email"
-              value={this.state.value}
+              value={this.state.email}
               onChange={event => this.setState({ email: event.target.value })}
               name="EMAIL"
               id="mce-EMAIL"
@@ -70,7 +70,7 @@ const EmailLabel = styled.label`
   bottom: 24px;
   left: 21px;
   transition: 0.3s;
-  z-index: -1;
+  color: ${({ theme }) => theme.baseTextColor};
 `;
 const EmailContainer = styled.div`
   position: relative;
@@ -87,7 +87,7 @@ const Form = styled.form`
 `;
 const EmailInput = styled.input`
   background-color: transparent;
-  border: 1px solid ${props => props.theme.secondaryColor};
+  border: 1px solid ${({ theme }) => theme.secondaryColor};
   border-radius: 5px;
   outline: none;
   height: 3rem;
@@ -101,15 +101,16 @@ const EmailInput = styled.input`
   letter-spacing: 2px;
   min-width: 300px;
   transition: 0.3s;
+  color: ${({ theme }) => theme.baseTextColor};
   &:focus {
-    border: 1px solid ${props => props.theme.mainColor};
+    border: 1px solid ${({ theme }) => theme.mainColor};
     transition: 0.3s;
     & + label {
       transition: 0.3s;
       transform: scale(0.8, 0.8) translate(-30px, -50px);
     }
   }
-  &:valid {
+  &[value]:not([value='']) {
     & + label {
       transition: 0.3s;
       transform: scale(0.8, 0.8) translate(-30px, -50px);

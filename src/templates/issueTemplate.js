@@ -1,25 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Layout from 'components/layout';
 
 export default function Template({ data }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
-      <IssueContainer>
-        <Frontmatter>
-          <Title>{frontmatter.title}</Title>
-          <Date>{frontmatter.date}</Date>
-        </Frontmatter>
+    <IssueContainer>
+      <Frontmatter>
+        <Title>{frontmatter.title}</Title>
+        <Date>{frontmatter.date}</Date>
+      </Frontmatter>
 
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </IssueContainer>
-    </Layout>
+      <div
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </IssueContainer>
   );
 }
 
@@ -35,6 +32,18 @@ const IssueContainer = styled.div`
     color: ${({ theme }) => theme.baseTextColor};
     &:hover {
       color: ${({ theme }) => theme.mainColor};
+    }
+  }
+  h2 {
+    margin-top: 50px;
+    color: ${({ theme }) => theme.mainColor};
+    @media screen and (max-width: 475px) {
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    @media screen and (max-width: 475px) {
+      font-size: 0.9rem;
     }
   }
 `;

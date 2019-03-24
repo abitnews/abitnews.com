@@ -28,8 +28,6 @@ A quantum algorithm on a IBM quantum computer enables to experimentally demonstr
 
 Spotify publish a website illustrating a bunch of facts about Apple's anti-competitive behavior.
 
----
-
 ## **~/News From Skynet**
 
 ### [Welcoming the Era of Deep Neuroevolution, by Uber](https://eng.uber.com/deep-neuroevolution/)
@@ -39,8 +37,6 @@ usually neural networks are trained routinely through stochastic gradient descen
 ### [This person does not exists (Generating and Tuning Realistic Artificial Faces)](https://thispersondoesnotexist.com/)
 
 TLDR: This website show how it is possible to generate extremely realistic artificial faces using GAN (Generative Adverse Network).
-
----
 
 ## **~/Frontend Wizart**
 
@@ -54,15 +50,11 @@ TLDR: This website show how it is possible to generate extremely realistic artif
 
 Last year, Carrefour became the first company to use blockchain for European food tracing. The firm has now extended that service, which initially only covered chicken and tomatoes, to include the retailer’s newest product to be added to blockchain: Carrefour Quality Line (CQL) fresh micro-filtered full-fat milk.
 
----
-
 ## **~/Nerdvana**
 
 ### [Why Doctor Strange Saw Exactly 14,000,605 Futures In Infinity War](https://www.reddit.com/r/FanTheories/comments/as2pfo/avengers_infinity_war_the_meaning_of_14_000_605/)
 
 A very cool theory by a Reddit user trying to explain how Dr. Strange arrives to this number.
-
----
 
 ## **~/The dev's den**
 

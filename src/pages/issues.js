@@ -1,29 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
-import Layout from 'components/layout';
 
 export default function Issues({ data }) {
-  console.log(data);
   const numberOfIssues = data.allMarkdownRemark.totalCount;
   const issues = data.allMarkdownRemark.edges;
   return (
-    <Layout>
-      <Container>
-        <Title>Issues ({numberOfIssues})</Title>
-        <IssueList>
-          {issues.map(({ node }) => (
-            <Issue key={node.id}>
-              <IssueTitle>
-                ~/
-                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-              </IssueTitle>
-              <IssueDate>{node.frontmatter.date}</IssueDate>
-            </Issue>
-          ))}
-        </IssueList>
-      </Container>
-    </Layout>
+    <Container>
+      <Title>Issues ({numberOfIssues})</Title>
+      <IssueList>
+        {issues.map(({ node }) => (
+          <Issue key={node.id}>
+            <IssueTitle>
+              ~/
+              <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+            </IssueTitle>
+            <IssueDate>{node.frontmatter.date}</IssueDate>
+          </Issue>
+        ))}
+      </IssueList>
+    </Container>
   );
 }
 

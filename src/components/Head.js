@@ -28,10 +28,7 @@ const Head = () => (
     />
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400"
-      rel="stylesheet"
-    />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="abitnewsbot" />
     <meta name="twitter:title" content="abitnews" />

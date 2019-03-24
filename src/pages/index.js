@@ -36,65 +36,63 @@ function getIcon(category) {
 }
 
 const HomePage = () => (
-  <Layout>
-    <HomePageWrapper>
-      <Content>
-        <TitleContainer>
-          <Title />
-        </TitleContainer>
-        <SubTitle>bit-sized technology news</SubTitle>
-        <SubSubTitle>1/2 human, 1/2 bot </SubSubTitle>
-        <SubscriptionForm />
-        <ScrollDown>
-          <span style={{ fontWeight: 'bold' }}>What&apos;s inside</span>
-          <ScrollDownContainer>
-            <a
-              aria-label="scroll-down"
-              onClick={() => {
-                const element = document.getElementById('techSeeker');
-                const y = element.getBoundingClientRect().top + window.scrollY;
-                if (element) {
-                  window.scroll({
-                    top: y,
-                    behavior: 'smooth',
-                  });
-                }
-              }}
-            >
-              <ScrollDownTriangle
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 184.75 160"
-              >
-                <polygon points="92.38 160 0 0 184.75 0 92.38 160" />
-              </ScrollDownTriangle>
-            </a>
-          </ScrollDownContainer>
-        </ScrollDown>
-      </Content>
-      <SectionContainer>
-        {categoriesDescription.map((category, index) => (
-          <Section
-            left={index % 2 ? true : false}
-            key={category.key}
-            id={category.key}
+  <HomePageWrapper>
+    <Content>
+      <TitleContainer>
+        <Title />
+      </TitleContainer>
+      <SubTitle>bit-sized technology news</SubTitle>
+      <SubSubTitle>1/2 human, 1/2 bot </SubSubTitle>
+      <SubscriptionForm />
+      <ScrollDown>
+        <span style={{ fontWeight: 'bold' }}>What&apos;s inside</span>
+        <ScrollDownContainer>
+          <a
+            aria-label="scroll-down"
+            onClick={() => {
+              const element = document.getElementById('techSeeker');
+              const y = element.getBoundingClientRect().top + window.scrollY;
+              if (element) {
+                window.scroll({
+                  top: y,
+                  behavior: 'smooth',
+                });
+              }
+            }}
           >
-            <ImgSection>
-              <ImgContainer category={category.key}>
-                {getIcon(category.key)}
-              </ImgContainer>
-            </ImgSection>
-            <div>
-              <SectionTitle>
-                ~/
-                {category.title}
-              </SectionTitle>
-              <SectionDescription>{category.description}</SectionDescription>
-            </div>
-          </Section>
-        ))}
-      </SectionContainer>
-    </HomePageWrapper>
-  </Layout>
+            <ScrollDownTriangle
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 184.75 160"
+            >
+              <polygon points="92.38 160 0 0 184.75 0 92.38 160" />
+            </ScrollDownTriangle>
+          </a>
+        </ScrollDownContainer>
+      </ScrollDown>
+    </Content>
+    <SectionContainer>
+      {categoriesDescription.map((category, index) => (
+        <Section
+          left={index % 2 ? true : false}
+          key={category.key}
+          id={category.key}
+        >
+          <ImgSection>
+            <ImgContainer category={category.key}>
+              {getIcon(category.key)}
+            </ImgContainer>
+          </ImgSection>
+          <div>
+            <SectionTitle>
+              ~/
+              {category.title}
+            </SectionTitle>
+            <SectionDescription>{category.description}</SectionDescription>
+          </div>
+        </Section>
+      ))}
+    </SectionContainer>
+  </HomePageWrapper>
 );
 
 const ImgSection = styled.div`

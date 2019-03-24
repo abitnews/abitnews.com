@@ -88,7 +88,6 @@ const CloseButton = styled.div`
   background-color: #ff5722;
 `;
 const TerminalMenu = styled.div`
-  background-color: blue;
   padding: 10px;
   height: 30px;
   display: flex;
@@ -98,7 +97,7 @@ const TerminalMenu = styled.div`
   align-items: center;
 `;
 const TerminalContainer = styled.div`
-  background-color: #263137;
+  background-color: ${({ theme }) => theme.backgroundContrast};
   width: 100%;
   border-radius: 5px;
   position: relative;

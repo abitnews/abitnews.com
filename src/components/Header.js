@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from './Link';
+import ThemeSwitch from 'components/ThemeSwitch';
 
-const Header = () => (
+const Header = ({ currentTheme, handleThemeChange }) => (
   <HeaderContainer>
     <Navbar>
       <Left>
@@ -25,10 +26,17 @@ const Header = () => (
           ~/issues
         </NavLink>
       </Right>
+      <ActionsContainer>
+        <ThemeSwitch onChange={handleThemeChange} currentTheme={currentTheme} />
+      </ActionsContainer>
     </Navbar>
   </HeaderContainer>
 );
 
+const ActionsContainer = styled.div`
+  margin-left: 30px;
+  display: inline-flex;
+`;
 const Left = styled.div`
   display: flex;
   flex-direction: row;
@@ -74,6 +82,7 @@ const Navbar = styled.nav`
   margin: auto;
   display: flex;
   min-height: 3rem;
+  align-items: center;
 `;
 
 export default Header;

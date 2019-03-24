@@ -41,7 +41,7 @@ const categoriesDescription = [
     key: 'yeahScience',
     hashUrl: 'yeah-science',
     title: 'Yeah Science!',
-    description: `Science does not care about what you think`,
+    description: `Everything related to humanities disciplines`,
     hashtag: '#YeahScience',
   },
   {

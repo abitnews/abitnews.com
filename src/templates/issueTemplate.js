@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import SEO from 'components/SEO';
+import SocialShare from 'components/SocialShare';
 
 export default function Template({ data, pageContext }) {
   console.log(data);
   console.log(pageContext);
   const issue = data.markdownRemark;
-
+  console.log('issue', issue);
   const { previous, next } = pageContext;
 
   return (
@@ -19,6 +20,10 @@ export default function Template({ data, pageContext }) {
       <Frontmatter>
         <Title>{issue.frontmatter.title}</Title>
         <Date>{issue.frontmatter.date}</Date>
+        <SocialShare
+          url={`${data.site.siteMetadata.siteUrl}${pageContext.slug}`}
+          title={issue.frontmatter.title}
+        />
       </Frontmatter>
       {/* <ul
         style={{
@@ -59,6 +64,7 @@ const IssueContainer = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 20px;
+  padding-bottom: 80px;
   max-width: 800px;
   a {
     color: ${({ theme }) => theme.baseTextColor};
@@ -89,10 +95,17 @@ const Title = styled.h1`
   font-size: 3rem;
   color: ${({ theme }) => theme.mainColor};
 `;
-const Date = styled.div``;
+const Date = styled.div`
+  padding-left: 3px;
+`;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
@@ -101,6 +114,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        number
       }
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SocialIcon } from './icons';
+import { SocialIcon } from 'components/icons/SocialIcon';
 
 const Footer = () => (
   <FooterContainer>

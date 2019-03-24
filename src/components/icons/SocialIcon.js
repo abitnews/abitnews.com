@@ -1,43 +1,43 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Link from './Link';
+import Link from '../Link';
 import PropTypes from 'prop-types';
-import IconGithub from './icons/Github';
-import IconLinkedin from './icons/Linkedin';
-import IconTwitter from './icons/Twitter';
-import IconReddit from './icons/Reddit';
+import IconGithub from './Github';
+import IconLinkedin from './Linkedin';
+import IconTwitter from './Twitter';
+import IconReddit from './Reddit';
 
-const SocialIcon = ({ social, link }) => {
+const SocialIcon = ({ social, link = '', small, onClick = () => {} }) => {
   const selectSocial = () => {
     switch (social) {
       case 'twitter':
         return (
-          <Link to={link}>
-            <SocialIconWrapper twitter>
+          <Link to={link} onClick={onClick}>
+            <SocialIconWrapper twitter small={small}>
               <IconTwitter />
             </SocialIconWrapper>
           </Link>
         );
       case 'linkedin':
         return (
-          <Link to={link}>
-            <SocialIconWrapper linkedin>
+          <Link to={link} onClick={onClick}>
+            <SocialIconWrapper linkedin small={small}>
               <IconLinkedin />
             </SocialIconWrapper>
           </Link>
         );
       case 'github':
         return (
-          <Link to={link}>
-            <SocialIconWrapper github>
+          <Link to={link} onClick={onClick}>
+            <SocialIconWrapper github small={small}>
               <IconGithub />
             </SocialIconWrapper>
           </Link>
         );
       case 'reddit':
         return (
-          <Link to={link}>
-            <SocialIconWrapper reddit>
+          <Link to={link} onClick={onClick}>
+            <SocialIconWrapper reddit small={small}>
               <IconReddit />
             </SocialIconWrapper>
           </Link>
@@ -66,6 +66,7 @@ const SocialIconWrapper = styled.div`
     width: 30px;
     margin: 0 10px;
   }
+
   transform: rotate(45deg);
   ${props =>
     props.facebook &&
@@ -107,12 +108,12 @@ const SocialIconWrapper = styled.div`
       transform: rotate(-360deg);
     }
   }
+  ${({ small }) =>
+    small &&
+    css`
+      height: 30px;
+      width: 30px;
+      margin: 0 12px;
+    `};
 `;
-export {
-  IconGithub,
-  IconTwitter,
-  IconLinkedin,
-  IconMedium,
-  SocialIcon,
-  IconAbitCompany,
-};
+export { IconGithub, IconTwitter, IconLinkedin, IconReddit, SocialIcon };

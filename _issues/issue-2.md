@@ -2,7 +2,7 @@
 date: '2019-03-25'
 title: 'Issue #2'
 number: 1
-description: 'Google hit with a $1.7 billion, tech giants protest againg EU Copyright Directive, Google presented Stadia, America’s first exascale, Quantum computing for the very curious, AWS DeepRacer League, Programming Language Rankings'
+description: 'Google hit with a $1.7 billion, tech giants protest againg EU Copyright Directive, Google presented Stadia, America’s first exascale supercomputer, Quantum computing for the very curious, AWS DeepRacer League, Programming Language Rankings'
 ---
 
 # Hello again!

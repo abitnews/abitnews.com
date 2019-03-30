@@ -24,6 +24,7 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,

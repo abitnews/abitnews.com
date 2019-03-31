@@ -7,7 +7,7 @@ description: 'European Parliament went crazy on copyright, fathers of Deep learn
 
 # Hello tech boomers
 
-As always busy week in tech.
+As usual busy week in tech. Thanks to our bots that worked hard to put together issue #3.
 Anyway, here some cool news...
 
 ## **~/Tech Seeker**
